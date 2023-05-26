@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import "./App.css";
 import { Counter } from "./Component/Counter";
 
 export function App() {
@@ -8,7 +7,7 @@ export function App() {
 
   const [inputData, setinputData] = useState("");
 
-  const [timer, settimer] = useState(false);
+  const [timer, setTimer] = useState(false);
 
   const [correctData, setcorrectData] = useState(0);
 
@@ -42,7 +41,7 @@ export function App() {
     let arr = e.target.value;
     setinputData(e.target.value);
 
-    settimer(true);
+    setTimer(true);
     let count = 1;
 
     for (let i = 0; i < arr.length; i++) {
@@ -74,13 +73,7 @@ export function App() {
 
 
 
-  let nextData = currentData[0];
-  for (let i = 0; i < currentData.length; i++) {
-    if (currentData[i] === inputData[i]) {
-      nextData = currentData[i + 1];
-    }
-  }
-
+ 
   const inputColor = () => {
     if (currentData.indexOf(inputData) !== -1) {
       if (currentData === inputData) {
@@ -99,6 +92,12 @@ export function App() {
     }
     return "white";
   };
+  let nextData = currentData[0];
+  for (let i = 0; i < currentData.length; i++) {
+    if (currentData[i] === inputData[i]) {
+      nextData = currentData[i + 1];
+    }
+  }
 
   useEffect(() => {
     let random = generateData();
@@ -122,17 +121,14 @@ export function App() {
       }} >
         Typing Master
       </h1>
-
-
-
-
       <Counter timer={timer} />
-      <Container style={{ width: "100%", marginBottom: "30px" }}>
+      <Container style={{ width: "100%"}}>
         <img
-          style={{ display: "block", margin: "auto" }}
+          style={{ display: "block", margin: "auto",border:"3px dotted red" }}
           src="https://media.giphy.com/media/3oKIPcqmx1mpCOJJp6/giphy.gif"
           className="img-fluid"
-          alt=""
+          alt="png"
+        
         />
       </Container>
 
@@ -179,12 +175,12 @@ export function App() {
             width: "100%",
             height: "80px",
             margin: "auto",
-            borderRadius: "0",
+           
             color: color(),
             fontSize: "24px",
-            fontWeight: "600",
+            fontWeight: "500",
             textAlign: "center",
-            marginBottom: "20px",
+            marginBottom: "30px",
             backgroundColor: inputColor(),
           }}
           size="lg"
