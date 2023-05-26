@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { Counter } from "./Component/Counter";
+import { Timer } from "./Component/Timer";
 
 export function App() {
   const [currentData, setcurrentData] = useState("");
@@ -120,8 +120,8 @@ export function App() {
         color: "grey", fontFamily: "sans-serif", fontStyle: "italic", textAlign: "center"
       }} >
         Typing Master
-      </h1>
-      <Counter timer={timer} />
+      </h1><hr/>
+      <Timer timer={timer} />
       <Container style={{ width: "100%"}}>
         <img
           style={{ display: "block", margin: "auto",border:"3px dotted red" }}

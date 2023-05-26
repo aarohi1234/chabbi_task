@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const Counter = ({ timer }) => {
+export const Timer = ({ timer }) => {
   const [second, setSecond] = useState(0);
   const [min, setMin] = useState(0);
   const [hour, setHour] = useState(0);
@@ -30,12 +30,8 @@ export const Counter = ({ timer }) => {
         display: "flex",
         justifyContent: "right",
         color: "black",
-           
-             
-       
       }}>
-      <div
-        style={{ padding: "10px", marginRight: "20px",}}>
+      <div style={{ padding: "10px", marginRight: "20px" }}>
         <h4 style={{ textAlign: "center" }}>
           {hour < 10 ? "0" + hour : hour}:{min < 10 ? "0" + min : min}:
           {second < 10 ? "0" + second : second}
